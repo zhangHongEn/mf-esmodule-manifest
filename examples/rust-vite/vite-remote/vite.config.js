@@ -23,14 +23,9 @@ export default defineConfig({
       exposes: {
         './App': './src/App.jsx',
       },
-      filename: 'dd/remoteEntry.js',
-      shared: {
-        vue: {},
-        react: {
-          requiredVersion: '18',
-        },
-        'react-dom': {},
-      },
+      filename: 'remoteEntry-[hash].js',
+      manifest: true,
+      shared: ['react','react/','react-dom','react-dom/'],
       runtimePlugins: ['./src/mfPlugins'],
     }),
     // If you set build.target: "chrome89", you can remove this plugin

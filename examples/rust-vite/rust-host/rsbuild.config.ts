@@ -18,9 +18,8 @@ export default defineConfig({
         new ModuleFederationPlugin({
           name: 'examples_rust',
           remotes: {
-            viteRemote: 'http://localhost:5173/dd/remoteEntry.js',
+            viteRemote: 'viteRemote@http://localhost:5173/mf-manifest.json',
           },
-          remoteType: 'module',
           exposes: {
             './app': './src/app.tsx',
           },
@@ -29,7 +28,9 @@ export default defineConfig({
           },
           shared: [
             'react',
+            'react/',
             'react-dom',
+            'react-dom/',
             'vue',
             // 'antd'
           ],

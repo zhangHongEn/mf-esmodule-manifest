@@ -10,14 +10,11 @@
     "lib/**/*"
   ],
   "scripts": {
-    "prepare": "husky install",
     "format": "pretty-quick",
     "dev": "microbundle watch --no-sourcemap --compress=false",
     "build": "rimraf lib && microbundle --no-sourcemap --compress=false",
     "dev-rv": "pnpm -filter 'examples-rust-vite*' run dev",
-    "dev-vv": "pnpm -filter 'examples-vite-vite*' run dev",
-    "dev-nv": "pnpm -filter 'examples-nuxt-vite-host' -filter 'examples-vite-vite-remote' run dev",
-    "preview-vv": "pnpm -filter 'examples-vite-vite*'  run preview"
+    "preview-rv": "pnpm -filter 'examples-rust-vite*' run preview"
   },
   "repository": {
     "type": "git",
@@ -48,8 +45,6 @@
     "defu": "^6.1.4"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
-    "microbundle": "^0.15.1",
     "mime-types": "^2.1.35",
     "pretty-quick": "^4.0.0",
     "rimraf": "^6.0.1",
